@@ -1,0 +1,14 @@
+import csv
+
+def funkcija():
+    try:
+        with open("fails.csv", 'r', encoding='utf8') as f:
+           divi = csv.reader(f)
+        for rinda in divi:
+           if len(rinda) > 1:  
+               print(rinda[1])
+    except FileNotFoundError:
+       print("Datne nav atrasta")
+    
+if __name__ =="__main__":
+    funkcija()
